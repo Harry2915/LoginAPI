@@ -1,7 +1,10 @@
+package com.dao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+
+import com.model.RegistrationModel;
 
 public class RegistrationDao {
 	public RegistrationModel getData(String fname,String lname,String email, int contact,String password) {

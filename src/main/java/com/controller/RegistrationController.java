@@ -1,6 +1,8 @@
-
+package com.controller;
 
 import java.io.IOException;
+
+import com.dao.RegistrationDao;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -8,10 +10,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-
 public class RegistrationController extends HttpServlet {
-
-
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RegistrationDao dao = new RegistrationDao();
@@ -21,4 +20,8 @@ public class RegistrationController extends HttpServlet {
 		rd.forward(request, response);
 	}
 
-}
+
+
+	}
+
+

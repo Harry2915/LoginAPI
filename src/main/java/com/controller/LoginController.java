@@ -1,6 +1,7 @@
 package com.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import com.dao.LoginDao;
 
@@ -15,11 +16,20 @@ public class LoginController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	   LoginDao dao = new LoginDao();
-	 
-	  if( dao.getDetails(request.getParameter("email"))) {
-		  RequestDispatcher rd = request.getRequestDispatcher("RegistrationDisplay.jsp");
-	       rd.forward(request, response);
-	}
+	   PrintWriter out = response.getWriter();
+	  if( dao.checkEmail(request.getParameter("email"))) {
+		  if(dao.checkPass(request.getParameter("pass"))) {
+		    RequestDispatcher rd = request.getRequestDispatcher("RegistrationDisplay.jsp");
+	          rd.forward(request, response);
+		  }else
+			  out.println("Incorrect Password");
+	}else
+		
+		  out.println("Email id does not exist");
+		
+		
+		}
+	  
 	  }
 	
-}
+

@@ -12,22 +12,44 @@ import com.model.RegistrationModel;
 
 public class LoginDao {
 	
-	public boolean getDetails(String email) {
+	public boolean checkEmail(String email) {
 		RegistrationModel model = new RegistrationModel();
 		 Configuration con = new Configuration().configure().addAnnotatedClass(RegistrationModel.class);
 		    
 	     SessionFactory sf=con.buildSessionFactory();
 	    Session session=sf.openSession();
 	    Transaction tr = session.beginTransaction();
-		Query query = session.createQuery("from RegistrationModel where email= : email");
+		Query query = session.createQuery("from RegistrationModel where email= : email ");
 		query.setParameter("email", email);
+	
 		
 		List list = query.list();
-		if(list!=null)
+		System.out.println(list);
+		if(!list.isEmpty())
 			return true;
 		
 		return false;
 		
 	}
+	public boolean checkPass(String pass) {
+		RegistrationModel model = new RegistrationModel();
+		 Configuration con = new Configuration().configure().addAnnotatedClass(RegistrationModel.class);
+		    
+	     SessionFactory sf=con.buildSessionFactory();
+	    Session session=sf.openSession();
+	    Transaction tr = session.beginTransaction();
+		Query query = session.createQuery("from RegistrationModel where password= : pass ");
+		query.setParameter("pass", pass);
+	
+		
+		List list = query.list();
+		System.out.println(list);
+		if(!list.isEmpty())
+			return true;
+		
+		return false;
+		
+	}
+
 
 }

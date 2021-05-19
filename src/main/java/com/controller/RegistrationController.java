@@ -16,7 +16,7 @@ public class RegistrationController extends HttpServlet {
 		RegistrationDao dao = new RegistrationDao();
 		dao.getData(request.getParameter("fname"), request.getParameter("lname"), request.getParameter("email"), Integer.parseInt(request.getParameter("contact")), request.getParameter("pass"));
 		
-		RequestDispatcher rd = request.getRequestDispatcher("RegistrationDisplay.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("Login.jsp");
 		rd.forward(request, response);
 	}
 

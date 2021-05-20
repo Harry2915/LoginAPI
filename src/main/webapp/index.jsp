@@ -19,9 +19,14 @@
 
 <label for="pass"><b>Enter password</b></label><br>
 <input type="text" placeholder="Enter password" name="pass"><br>
+
+<label for="cpass"><b>Confirm password</b></label><br>
+<input type="text" placeholder="Confirm password" name="cpass"><br>
+
+
 <hr>
 
-<button type="submit" name="button" ><strong>Register</strong></button>
+<button type="submit" name="button" id="button"  ><strong>Register</strong></button>
 </div>
 
 </form>

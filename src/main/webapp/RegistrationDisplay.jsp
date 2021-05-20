@@ -7,6 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%
+
+if(session.getAttribute("email")==null)
+	 response.sendRedirect("Login.jsp");
+
+%>
     Registration Successful
 </body>
 </html>

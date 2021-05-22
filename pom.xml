@@ -31,7 +31,11 @@
     <artifactId>hibernate-core</artifactId>
     <version>5.4.31.Final</version>
 </dependency>
-   
+ <dependency>
+    <groupId>jstl</groupId>
+    <artifactId>jstl</artifactId>
+    <version>1.2</version>
+</dependency>
     <dependency>
     <groupId>mysql</groupId>
     <artifactId>mysql-connector-java</artifactId>

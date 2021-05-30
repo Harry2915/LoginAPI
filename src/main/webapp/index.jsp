@@ -185,7 +185,7 @@ if( s!=null)
         /* Added */
         float: 10%;
         /* Added */
-        margin-bottom: 10px;
+        margin-bottom: 20px;
         /* Added */
         margin-top: 20px;
     }
@@ -257,6 +257,12 @@ if( s!=null)
                         </button>
 
                     </div>
+
+ <div class="mb-3" style="font: small-caps; text-align: center; font-size: 10px; margin-top: 20px;">
+                        Already a member? <a href="Login.jsp"> <font color="blue"><strong> Login  </strong></font></a>
+                        
+                    </div>
+
 
                 </form>
             </div>

@@ -27,7 +27,7 @@
   padding: 40px;
   border-radius: 4px;
   color: #505e6c;
-  box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+   box-shadow: 0 4px 8px 0 rgba(245, 87, 87, 0.2);
 }
 
 body {
@@ -113,6 +113,7 @@ if (email == "") {
 
 </script>
 
+
 <%
 
 String s=(String) request.getAttribute("errorMessage");
@@ -152,7 +153,15 @@ if( s!=null)
                
             </div>
             <div class="mb-3"> <button class="btn btn-danger d-block w-100" type="submit" name="button" id="button" disabled="true" ><strong>Log In</strong></button></div>
-            Forgot your password?<a class="forgot" href="#"> Click Here</a>
+           
+           <div style="font: small-caps; text-align:right; font-size: 10px; margin-top: 20px;">
+            Forgot your password?<a class="forgot" href="#"> </a>
+            
+            </div >
+            
+            <div style="font: small-caps; text-align: center; font-size: 12px; margin-top: 20px;">
+            New Member? <a href="index.jsp"><strong>Create Your Account</strong></a>
+            </div>
         </form>
     </section>
 

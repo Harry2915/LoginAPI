@@ -125,8 +125,7 @@ if( s!=null)
 		%>
 	
 	<%=s%>
-		<%}else
-			out.println("");%>
+		<%}%>
 	
        
 <body>

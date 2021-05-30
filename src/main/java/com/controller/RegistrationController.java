@@ -3,6 +3,7 @@ package com.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import com.dao.LoginDao;
 import com.dao.RegistrationDao;
 
 import jakarta.servlet.RequestDispatcher;
@@ -17,9 +18,15 @@ public class RegistrationController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RegistrationDao dao = new RegistrationDao();
 		 PrintWriter out = response.getWriter();
-		if(!request.getParameter("pass").equals(request.getParameter("cpass"))){
+		 
+		 LoginDao dao1= new LoginDao();
+		 
+		if(dao1.checkEmail(request.getParameter("email"))){
 			
-			out.println("Password and confirm password should be same");
+			String s ="Email id Already Exist Please Login to Continue";
+			 request.setAttribute("errorMessage", s);
+			  RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+			  rd.forward(request, response);
 			
 			
 				

@@ -162,7 +162,20 @@
 
     }
 </script>
+<%
 
+String s=(String) request.getAttribute("errorMessage");
+
+
+
+if( s!=null)
+{
+	
+		%>
+	<font color="red">
+	<%=s%>
+		<%}%>
+		</font>
 <style>
     .card {
         max-width: 550px;

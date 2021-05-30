@@ -1,3 +1,5 @@
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
@@ -110,7 +112,25 @@ if (email == "") {
     }
 
 </script>
+
+<%
+
+String s=(String) request.getAttribute("errorMessage");
+
+
+
+if( s!=null)
+{
+	
+		%>
+	
+	<%=s%>
+		<%}else
+			out.println("");%>
+	
+       
 <body>
+
 
     <section class="login-clean">
         <form action="Login" >
@@ -118,6 +138,7 @@ if (email == "") {
             <div class="alert" style="padding: 2px;">
                 <span id="blankMsg" style="border-color:rgb(104, 20, 20) ; background:rgb(255, 200, 200)"
                     onclick="hide(); return false"> </span>
+                    
             </div>
             <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
             <div class="mb-3">

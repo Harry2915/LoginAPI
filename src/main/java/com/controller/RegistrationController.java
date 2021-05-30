@@ -18,6 +18,7 @@ public class RegistrationController extends HttpServlet {
 		RegistrationDao dao = new RegistrationDao();
 		 PrintWriter out = response.getWriter();
 		if(!request.getParameter("pass").equals(request.getParameter("cpass"))){
+			
 			out.println("Password and confirm password should be same");
 			
 			

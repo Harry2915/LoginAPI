@@ -80,7 +80,7 @@ body {
 <script>
  function validateForm() {
 var email=document.getElementById("email").value;
-var pass=document.getElementById("pass").value;
+
 if (email == "") {
             document.getElementById("blankMsg").innerHTML = "*Email Required";
             document.getElementById("blankMsg").style.padding = "5px";
@@ -94,26 +94,10 @@ if (email == "") {
             document.getElementById("blankMsg").style.padding = "0px";
             button.disabled=false;
         }
-        if (pass == "") {
-            document.getElementById("blankMsg").innerHTML = "*Password Required";
-            
-            
-            document.getElementById('pass').style.borderColor = "red";
-            document.getElementById("blankMsg").style.padding = "5px";
-            button.disabled=true;
-            return false;
-        }else {
-            document.getElementById("blankMsg").innerHTML = "";
-            document.getElementById('pass').style.borderColor = "";
-            document.getElementById("blankMsg").style.padding = "0px";
-            button.disabled=false;
-        }
 
     }
 
 </script>
-
-
 <%
 
 String s=(String) request.getAttribute("errorMessage");
@@ -128,16 +112,19 @@ if( s!=null)
 	<%=s%>
 		<%}%>
 	
+
+
+	
        
 <body>
 
 
     <section class="login-clean">
-        <form action="Login" >
-            <h2 class="visually"><strong>Login</strong> Form</h2>
+        <form action="Forgotpass" >
+            <h2 class="visually"><strong>Enter the email address associated with your account.</strong> </h2>
             <div class="alert" style="padding: 2px;">
                 <span id="blankMsg" style="border-color:rgb(104, 20, 20) ; background:rgb(255, 200, 200)"
-                    onclick="hide(); return false"> </span>
+                   > </span>
                     
             </div>
             <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
@@ -146,22 +133,14 @@ if( s!=null)
                 <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email"
                     id="email" onkeyup="validateForm()" >
             </div>
-            <div class="mb-3">
-                <label for="pass" class="form-label">Password</label>
-                <input type="password" class="form-control" placeholder="Type your password" name="pass"
-                    id="pass" onkeyup="validateForm()">
-               
-            </div>
-            <div class="mb-3"> <button class="btn btn-danger d-block w-100" type="submit" name="button" id="button" disabled="true" ><strong>Log In</strong></button></div>
            
-           <div style="font: small-caps; text-align:right; font-size: 10px; margin-top: 20px;">
-            <a class="forgot" href="VerifyEmail.jsp" style="text-decoration: none; " > <strong>Forgot your password? </strong></a>
-            
-            </div >
-            
-            <div style="font: small-caps; text-align: center; font-size: 12px; margin-top: 20px;">
-            New Member? <a href="index.jsp" style="text-decoration: none;"><strong>Create Your Account</strong></a>
-            </div>
+            <div class="mb-3"> <button class="btn btn-danger d-block w-100" type="submit" name="button" id="button" disabled="true" ><strong>continue</strong></button></div>
+           
+           <div class="mb-3"> 
+           <a href="Login.jsp" style="text-decoration: none;">
+           <div class="btn btn-danger d-block w-100"><strong>cancel</strong></div></a>
+           </div>
+           
         </form>
     </section>
 

@@ -16,13 +16,27 @@
   	<description></description>
   	<servlet-class>com.controller.LoginController</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>PasswordResetController</servlet-name>
+  	<display-name>PasswordResetController</display-name>
+  	<description></description>
+  	<servlet-class>com.controller.PasswordResetController</servlet-class>
+  </servlet>
+  
   <servlet-mapping>
   	<servlet-name>RegistrationController</servlet-name>
   	<url-pattern>/Register</url-pattern>
   </servlet-mapping>
+  
+  
   <servlet-mapping>
   	<servlet-name>LoginController</servlet-name>
   	<url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>PasswordResetController</servlet-name>
+  	<url-pattern>/Forgotpass</url-pattern>
   </servlet-mapping>
 
 

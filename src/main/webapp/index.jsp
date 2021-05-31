@@ -206,7 +206,7 @@ if( s!=null)
                     <div class="mb-3">
                         <label for="fname" class="form-label">First Name</label>
                         <input class="form-control" type="text" placeholder="Enter First Name" name="fname" id="fname"
-                            onchange="validateForm()">
+                            onkeyup="validateForm()">
 
 
                     </div>
@@ -214,7 +214,7 @@ if( s!=null)
                     <div class="mb-3">
                         <label for="lname" class="form-label">Last Name</label>
                         <input class="form-control" type="text" placeholder="Enter Last Name" name="lname" id="lname"
-                            onchange="validateForm()">
+                            onkeyup="validateForm()">
 
                         
                     </div>
@@ -223,7 +223,7 @@ if( s!=null)
                     <div class="mb-3">
                         <label for="email" class="form-label">Email address</label>
                         <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email"
-                            id="email" onchange="validateForm()" >
+                            id="email" onkeyup="validateForm()" >
                     </div>
 
 
@@ -231,14 +231,14 @@ if( s!=null)
                     <div class="mb-3">
                         <label for="contact" class="form-label">Contact Number</label>
                         <input type="tel" pattern=".{10}" class="form-control" placeholder="Mobile"
-                            oninput="check(this)" name="contact" id="contact" onchange="validateForm()">
+                            oninput="check(this)" name="contact" id="contact" onkeyup="validateForm()">
 
                     </div>
 
                     <div class="mb-3">
                         <label for="pass" class="form-label">Password</label>
                         <input type="password" class="form-control" placeholder="Type your password" name="pass"
-                            id="pass" onchange="validateForm()">
+                            id="pass" onkeyup="validateForm()">
                        
                     </div>
 
@@ -246,7 +246,7 @@ if( s!=null)
                     <div class="mb-3">
                         <label for="cpass" class="form-label">Confirm Password</label>
                         <input type="password" class="form-control" placeholder="Re-type your password" name="cpass"
-                            id="cpass" onchange="validateForm()">
+                            id="cpass" onkeyup="validateForm()">
                         
                     </div>
 
@@ -259,7 +259,7 @@ if( s!=null)
                     </div>
 
  <div class="mb-3" style="font: small-caps; text-align: center; font-size: 10px; margin-top: 20px;">
-                        Already a member? <a href="Login.jsp"> <font color="blue"><strong> Login  </strong></font></a>
+                        Already a member? <a href="Login.jsp" style="text-decoration: none;"> <font color="blue"><strong> Login  </strong></font></a>
                         
                     </div>
 

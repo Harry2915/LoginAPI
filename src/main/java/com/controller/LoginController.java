@@ -24,7 +24,7 @@ public class LoginController extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.setAttribute("email", request.getParameter("email"));
 	   
-	 //  List l=new LinkedList();
+	
      
 	  if( dao.checkEmail(request.getParameter("email"))) {
 		  if(dao.checkPass(request.getParameter("pass"),request.getParameter("email"))) {

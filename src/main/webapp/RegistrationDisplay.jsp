@@ -13,6 +13,6 @@ if(session.getAttribute("email")==null)
 	 response.sendRedirect("Login.jsp");
 
 %>
-    Registration Successful
+    Logged in Successfully
 </body>
 </html>

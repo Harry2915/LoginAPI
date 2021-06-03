@@ -164,22 +164,33 @@ if( s!=null)
 	<%=s%>
 		<%}%>
 	
+<%
 
+String email= (String)request.getAttribute("email");
+
+%>
 
 	
        
 <body>
 
 
-    <section class="login-clean">
-        <form action="Forgotpass" >
+    <section class="login-clean" >
+        <form action="Forgotpass" method="post" >
             <h2 class="visually"><strong>Keep your password Safe!</strong> </h2>
             <div class="alert" style="padding: 2px;">
                 <span id="blankMsg" style="border-color:rgb(104, 20, 20) ; background:rgb(255, 200, 200)"
                    > </span>
                     
             </div>
-            <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
+            
+                     
+            <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control text-muted" id="email" value=<%=(String)request.getAttribute("email") %> name="email"
+                    id="email" readonly="readonly" style="background-color: white;" >
+            </div>
+           
              <div class="mb-3">
                         <label for="pass" class="form-label">New Password</label>
                         <input type="password" class="form-control" placeholder="Type your password" name="pass"

@@ -1,4 +1,5 @@
 package com.model;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -13,6 +14,7 @@ public class RegistrationModel {
 	public int id;
 	public String fname;
 	public String lname;
+	@Column(unique = true)
 	public String email;
 	public int contact;
 	public String password;

@@ -1,7 +1,9 @@
 package com.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
+import com.dao.ForgotPassDao;
 import com.dao.LoginDao;
 
 import jakarta.servlet.RequestDispatcher;
@@ -18,21 +20,16 @@ public class PasswordResetController extends HttpServlet {
  
 
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 String email=request.getParameter("email");
-		 LoginDao dao = new LoginDao();
-		 HttpSession session = request.getSession();
-		 if( dao.checkEmail(request.getParameter("email"))) {
-			 request.setAttribute("email", email);
-			 RequestDispatcher rd = request.getRequestDispatcher("ResetPass.jsp");
-	          rd.forward(request, response);
-			 
-		 }else {
-			 String s= "Email id not Registered";
-			  request.setAttribute("errorMessage",s );
-			  RequestDispatcher rd = request.getRequestDispatcher("VerifyEmail.jsp");
-			  rd.forward(request, response);
-		 }
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	String pass=(String) request.getParameter("pass");
+	String email = request.getParameter("email");
+	ForgotPassDao dao= new ForgotPassDao();
+	PrintWriter out=response.getWriter();
+      System.out.println(email);
+	if(dao.resetPass(pass, email)) {
+		out.println("success");
+	}else
+		out.println("failed");
 	}
 
 }

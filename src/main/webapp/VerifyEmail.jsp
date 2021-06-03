@@ -120,7 +120,7 @@ if( s!=null)
 
 
     <section class="login-clean">
-        <form action="Forgotpass" >
+        <form action="Verifymail" >
             <h2 class="visually"><strong>Enter the email address associated with your account.</strong> </h2>
             <div class="alert" style="padding: 2px;">
                 <span id="blankMsg" style="border-color:rgb(104, 20, 20) ; background:rgb(255, 200, 200)"

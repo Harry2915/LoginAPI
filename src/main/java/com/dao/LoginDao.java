@@ -11,14 +11,15 @@ import org.hibernate.cfg.Configuration;
 import com.model.RegistrationModel;
 
 public class LoginDao {
+	RegistrationModel model = new RegistrationModel();
+	 Configuration con = new Configuration().configure().addAnnotatedClass(RegistrationModel.class);
+	    
+    SessionFactory sf=con.buildSessionFactory();
+   Session session=sf.openSession();
+   Transaction tr = session.beginTransaction();
 	
 	public boolean checkEmail(String email) {
-		RegistrationModel model = new RegistrationModel();
-		 Configuration con = new Configuration().configure().addAnnotatedClass(RegistrationModel.class);
-		    
-	     SessionFactory sf=con.buildSessionFactory();
-	    Session session=sf.openSession();
-	    Transaction tr = session.beginTransaction();
+
 		Query query = session.createQuery("from RegistrationModel where email= : email ");
 		query.setParameter("email", email);
 	
@@ -32,12 +33,7 @@ public class LoginDao {
 		
 	}
 	public boolean checkPass(String pass) {
-		RegistrationModel model = new RegistrationModel();
-		 Configuration con = new Configuration().configure().addAnnotatedClass(RegistrationModel.class);
-		    
-	     SessionFactory sf=con.buildSessionFactory();
-	    Session session=sf.openSession();
-	    Transaction tr = session.beginTransaction();
+	
 		Query query = session.createQuery("from RegistrationModel where password= : pass ");
 		query.setParameter("pass", pass);
 	

@@ -24,6 +24,7 @@ RegistrationModel model=new RegistrationModel();
      model.setPassword(password);
      session.save(model);
     tr.commit();
+    session.close();
     return model;
 	}
 

@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.mindrot.jbcrypt.BCrypt;
 
 import com.model.RegistrationModel;
 
@@ -32,19 +33,24 @@ public class LoginDao {
 		return false;
 		
 	}
-	public boolean checkPass(String pass) {
-	
-		Query query = session.createQuery("from RegistrationModel where password= : pass ");
-		query.setParameter("pass", pass);
-	
-		
-		List list = query.list();
-		System.out.println(list);
-		if(!list.isEmpty())
-			return true;
-		
+	public boolean checkPass(String pass, String email) {
+		  RegistrationModel user = (RegistrationModel)session.createQuery("from RegistrationModel where email = :email").setString("email", email).uniqueResult();
+		  
+		  if(BCrypt.checkpw(pass, user.getPassword()))
+              return true;
+		  
+          
+//		Query query = session.createQuery("from RegistrationModel where password= : pass ");
+//		query.setParameter("pass", pass);
+//	
+//		
+//		List list = query.list();
+//		System.out.println(list);
+//		if(!list.isEmpty())
+//			return true;
+//		
 		return false;
-		
+//		
 	}
 
 

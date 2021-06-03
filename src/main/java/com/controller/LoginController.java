@@ -27,7 +27,7 @@ public class LoginController extends HttpServlet {
 	 //  List l=new LinkedList();
      
 	  if( dao.checkEmail(request.getParameter("email"))) {
-		  if(dao.checkPass(request.getParameter("pass"))) {
+		  if(dao.checkPass(request.getParameter("pass"),request.getParameter("email"))) {
 		    RequestDispatcher rd = request.getRequestDispatcher("RegistrationDisplay.jsp");
 	          rd.forward(request, response);
 		  }else {

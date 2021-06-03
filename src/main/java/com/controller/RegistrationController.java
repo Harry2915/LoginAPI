@@ -3,6 +3,8 @@ package com.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import org.mindrot.jbcrypt.BCrypt;
+
 import com.dao.LoginDao;
 import com.dao.RegistrationDao;
 
@@ -14,13 +16,17 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 public class RegistrationController extends HttpServlet {
-	
+	 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RegistrationDao dao = new RegistrationDao();
 		 PrintWriter out = response.getWriter();
 		 
 		 LoginDao dao1= new LoginDao();
-		 
+		String password=BCrypt.hashpw(request.getParameter("pass"), BCrypt.gensalt(12));
+		System.out.println(password);
+
+		
+		
 		if(dao1.checkEmail(request.getParameter("email"))){
 			
 			String s ="Email id Already Exist Please Login to Continue";
@@ -31,7 +37,7 @@ public class RegistrationController extends HttpServlet {
 			
 				
 		}else {
-		dao.getData(request.getParameter("fname"), request.getParameter("lname"), request.getParameter("email"), Integer.parseInt(request.getParameter("contact")), request.getParameter("pass"));
+		dao.getData(request.getParameter("fname"), request.getParameter("lname"), request.getParameter("email"), Integer.parseInt(request.getParameter("contact")), password);
 	
 		RequestDispatcher rd = request.getRequestDispatcher("Login.jsp");
 		rd.forward(request, response);

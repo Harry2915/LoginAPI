@@ -98,12 +98,7 @@ if (email == "") {
     }
 
 </script>
-<%
 
-if(session.getAttribute("email")==null)
-	 response.sendRedirect("Login.jsp");
-
-%>
 <%
 
 String s=(String) request.getAttribute("errorMessage");

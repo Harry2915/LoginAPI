@@ -206,7 +206,7 @@ if( s!=null)
                     <div class="mb-3">
                         <label for="fname" class="form-label">First Name</label>
                         <input class="form-control" type="text" placeholder="Enter First Name" name="fname" id="fname"
-                            onkeyup="validateForm()">
+                           onkeyup="validateForm()">
 
 
                     </div>
